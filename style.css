@@ -1,0 +1,213 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #8D52FF;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.box {
+    background-color: white;
+    box-shadow: 0 4px 32px 10px rgba(0, 0, 0, 0.3);
+    border: 1px solid #eee;
+    width: 70vw;
+    height: 85vh;
+    border-radius: 20px;
+    overflow-y: scroll;
+}
+
+.header {
+    box-shadow: 0 0px 6px 4px rgba(141, 82, 255, 0.3);
+    color: rgb(113, 4, 195);
+    position: sticky;
+    z-index: 10;
+    left: 3.5%;
+    top: 3%;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 20px;
+    width: 90%;
+    background-color: aqua;
+    margin-bottom: 30px;
+}
+
+.header img {
+    width: 30px;
+    cursor: pointer;
+}
+
+.header img:hover {
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+}
+
+.addnote {
+    cursor: pointer;
+}
+
+.addnote:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+.notecontainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin: 10px;
+    width: 90%;
+    height: 80%;
+    position: relative;
+    left: 3.5%;
+    top: 3%;
+}
+
+.note {
+    background-color: #FEF185;
+    border-radius: 20px;
+    padding: 10px;
+    height: 40vh;
+    border: 1px solid rgba(223, 77, 77, 0.813);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.heading {
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.content {
+    text-align: center;
+    font-size: 0.9em;
+    flex: 1 1 auto;
+    overflow-y: auto;
+    min-height: 0;
+}
+
+.svgs {
+    position: relative;
+    top: 2%;
+    border: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    background-color: rgb(254, 240, 133);
+}
+
+.svgs img {
+    cursor: pointer;
+    width: 20px;
+}
+
+.note {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.note.fade-out {
+    opacity: 0;
+}
+
+
+.popup {
+    padding-bottom: 20px;
+    overflow: scroll;
+    border-radius: 30px;
+    position: absolute;
+    width: 50vw;
+    height: 90vh;
+    background-color: rgb(254, 240, 133);
+    z-index: 15;
+    box-shadow: 0 4px 32px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.popup .heading {
+    background-color: #FEF185;
+    margin: 40px;
+    width: 80%;
+    font-size: 1.5em;
+    max-height: 50%;
+}
+
+.popup .content {
+    text-align: center;
+    background-color: #FEF185;
+    width: 80%;
+    margin: 20px;
+    padding: 20px;
+}
+
+.popup .svgs img {
+    width: 0;
+}
+
+.popup img {
+    width: 40px;
+    position: relative;
+    left: 45%;
+    top: 2%;
+    cursor: pointer;
+}
+
+/* Add this overlay div in your HTML before the popup */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 14;
+    /* One less than popup */
+
+opacity: 0; visibility: hidden;
+  transition: opacity 1s ease, visibility 1 ease;
+
+
+
+}
+
+.savebtn {
+    cursor: pointer;
+    padding: 10px 20px;
+    text-align: center;
+    border: 1px solid greenyellow;
+    position: sticky;
+    /* top: 30vh;     */
+    background-color: rgb(143, 168, 220);
+    border-radius: 20px;
+}
+
+.blur {
+    border-radius: 20px;
+    z-index: 2;
+    /* background-color: rgb(217, 213, 135);
+    opacity: 0.9; */
+    position: absolute;
+    left: 17vw;
+    width: 65vw;
+    height: 2.6vh;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    /* For Safari */
+    background: rgba(255, 255, 255, 0.3);
+}
+
+textarea {
+    border: none;
+}
