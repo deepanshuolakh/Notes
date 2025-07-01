@@ -156,8 +156,8 @@ body {
 
 .popup img {
     width: 40px;
-    position: relative;
-    left: 45%;
+    position: absolute;
+    left: 92%;
     top: 2%;
     cursor: pointer;
 }
